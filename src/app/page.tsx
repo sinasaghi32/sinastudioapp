@@ -4,6 +4,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { useReducedMotion, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
   FaCode,
   FaServer,
@@ -283,21 +284,42 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="mt-48 max-w-5xl mx-auto" aria-labelledby="about-heading">
+      <section
+        id="about"
+        className="relative mt-32 mx-auto max-w-6xl bg-gradient-to-br from-blue-700 via-green-800 to-purple-900 text-white rounded-3xl shadow-2xl p-10 overflow-hidden"
+        aria-label="About Me"
+      >
+        {/* Glassmorphism overlay */}
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-3xl z-0" />
+
         <motion.div
-          className="text-center mb-16"
-          initial={reduce ? {} : { opacity: 0, y: 20 }}
-          whileInView={reduce ? {} : { opacity: 1, y: 0 }}
+          className="relative z-10 flex flex-col md:flex-row items-center gap-10"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-900/50 text-indigo-300 mb-4">
-            <FaMagic className="mr-2" aria-hidden /> About Me
+          <Image
+            src="/images/IMG_1328.png"
+            alt="Photo of Sina"
+            width={250}
+            height={350}
+            className="rounded-2xl object-cover shadow-xl border-2 border-white/20 hover:scale-105 transition-transform duration-300 ease-in-out"
+          />
+
+          <div className="text-center md:text-left">
+            <h2 className="text-4xl font-extrabold mb-4 tracking-tight">
+              👋 Hi, I’m Sina!
+            </h2>
+            <p className="text-white/90 text-lg mb-3 leading-relaxed">
+              I’m a passionate software engineering student living in Korea,
+              building exciting things on the web and always pushing my limits.
+            </p>
+            <p className="text-white/70 text-sm">
+              When I’m not coding, you’ll find me lifting weights, exploring new tech,
+              or planning my next creative project. Thanks for visiting my space!
+            </p>
           </div>
-          <h2 id="about-heading" className="text-4xl md:text-5xl font-bold">Driven by Vision, Built with Code</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mt-4">
-            I’m Sina —  software engineering student fluent in Korean, English, and Persian. From fullstack web development to smart AI integrations, I build digital solutions that matter.
-          </p>
         </motion.div>
       </section>
 
