@@ -296,7 +296,7 @@ export default function Home() {
           </div>
           <h2 id="about-heading" className="text-4xl md:text-5xl font-bold">Driven by Vision, Built with Code</h2>
           <p className="text-gray-400 max-w-2xl mx-auto mt-4">
-            I’m Sina — an Iranian software engineering student fluent in Korean, English, and Persian. From fullstack web development to smart AI integrations, I build digital solutions that matter.
+            I’m Sina —  software engineering student fluent in Korean, English, and Persian. From fullstack web development to smart AI integrations, I build digital solutions that matter.
           </p>
         </motion.div>
       </section>
